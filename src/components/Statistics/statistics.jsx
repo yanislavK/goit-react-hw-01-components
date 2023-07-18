@@ -1,4 +1,5 @@
 import styles from './statistics.module.css';
+import PropTypes from 'prop-types';
 
 export default function Statistics({ data, title }) {
   const elements = data.map(item => (
@@ -18,3 +19,14 @@ export default function Statistics({ data, title }) {
     </section>
   );
 }
+
+Statistics.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
+  title: PropTypes.string,
+};

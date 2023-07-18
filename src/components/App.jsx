@@ -1,6 +1,6 @@
-import Profile from './Profile/profile';
+import Profile from './Profile';
 import Statistics from './Statistics/statistics';
-import FriendList from './Friends/FriendList';
+import FriendList from './Friends';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
 
 import user from '../data/user.json';
