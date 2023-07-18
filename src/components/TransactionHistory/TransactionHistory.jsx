@@ -8,7 +8,7 @@ export default function TransactionHistory({ items }) {
       <td className={styles.rowElement}>{item.currency}</td>
     </tr>
   ));
-
+// cc
   return (
     <table className={styles.transactionHistory}>
       <thead className={styles.head}>
