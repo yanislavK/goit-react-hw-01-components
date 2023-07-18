@@ -1,41 +1,29 @@
-import { ReactDOM } from 'react-dom';
+import styles from './profile.module.css';
 
-const user = (
-  <div class="profile">
-    <div class="description">
-      <img src={data.avatar} alt="User avatar" class="avatar" />
-      <p class="name">{data.username}</p>
-      <p class="tag">{data.tag}</p>
-      <p class="location">{data.location}</p>
+export default function Profile({ username, tag, location, avatar, stats }) {
+  return (
+    <div className={styles.profile}>
+      <div className={styles.description}>
+        <img src={avatar} alt="User avatar" className={styles.avatar} />
+        <p className={styles.name}>{username}</p>
+        <p className={styles.tag}>{tag}</p>
+        <p className={styles.location}>{location}</p>
+      </div>
+
+      <ul className={styles.stats}>
+        <li>
+          <span className={styles.label}>Followers</span>
+          <span className={styles.quantity}>{stats.followers}</span>
+        </li>
+        <li>
+          <span className={styles.label}>Views</span>
+          <span className={styles.quantity}>{stats.views}</span>
+        </li>
+        <li>
+          <span className={styles.label}>Likes</span>
+          <span className={styles.quantity}>{stats.likes}</span>
+        </li>
+      </ul>
     </div>
-
-    <ul class="stats">
-      <li>
-        <span class="label">Followers</span>
-        <span class="quantity">{data.stats.followers}</span>
-      </li>
-      <li>
-        <span class="label">Views</span>
-        <span class="quantity">{data.stats.views}</span>
-      </li>
-      <li>
-        <span class="label">{data.stats.likes}</span>
-        <span class="quantity">3000</span>
-      </li>
-    </ul>
-  </div>
-);
-
-ReactDOM.render(user, document.querySelector('#root'));
-
-const data = {
-  username: 'Jacques Gluke',
-  tag: 'jgluke',
-  location: 'Ocho Rios, Jamaica',
-  avatar: 'https://cdn-icons-png.flaticon.com/512/2922/2922506.png',
-  stats: {
-    followers: 5603,
-    views: 4827,
-    likes: 1308,
-  },
-};
+  );
+}
