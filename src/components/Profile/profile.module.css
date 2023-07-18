@@ -47,10 +47,10 @@
 }
 
 .stats {
+  list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-
   margin: 32px 0 0;
   width: 80%;
 }
